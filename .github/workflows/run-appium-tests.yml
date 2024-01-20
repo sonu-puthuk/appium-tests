@@ -18,6 +18,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
+      - name: java-setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle' # See 'Supported distributions' for available options
+          java-version: '21'
+          
       - name: Install and Run Appium Server
         run: |
           chmod +x ./src/scripts/runAppiumServer.sh
