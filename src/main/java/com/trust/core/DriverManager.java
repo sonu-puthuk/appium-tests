@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class DriverManager {
     private static AppiumDriver driver;
-    String APPIUM_SERVER_URL = "http://127.0.0.1:4723";
+    String APPIUM_SERVER_URL = "http://localhost:4723";
 
     public AppiumDriver getDriver(Platform platform) throws Exception {
         return switch (platform) {
