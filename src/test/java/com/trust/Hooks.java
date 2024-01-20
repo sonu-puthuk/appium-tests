@@ -4,10 +4,13 @@ import com.trust.constants.Platform;
 import com.trust.core.DriverManager;
 import com.trust.utils.PropertyHelper;
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -28,6 +31,7 @@ public class Hooks {
 
     @AfterMethod(alwaysRun = true)
     public void teardown() {
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         driver.quit();
     }
 }
