@@ -26,7 +26,7 @@ jobs:
       - name: Install and Run Appium Server
         run: |
           chmod +x ./src/scripts/runAppiumServer.sh
-          ./scripts/RunAppiumServer.sh
+          ./src/scripts/runAppiumServer.sh
 
       - name: Enable KVM
         run: |
