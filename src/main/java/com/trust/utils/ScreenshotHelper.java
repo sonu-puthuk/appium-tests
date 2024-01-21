@@ -8,9 +8,8 @@ import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.io.IOException;
-
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 
 public class ScreenshotHelper implements ITestListener {
