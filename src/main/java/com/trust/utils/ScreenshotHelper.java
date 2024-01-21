@@ -1,4 +1,3 @@
-
 package com.trust.utils;
 
 import com.trust.core.DriverManager;
@@ -19,7 +18,7 @@ public class ScreenshotHelper implements ITestListener {
     }
 
     public void captureScreenShot(ITestResult result, String status) {
-        String destDir = status.equalsIgnoreCase("fail")?"build/reports/screenshots/fail":"screenshots/pass";
+        String destDir = status.equalsIgnoreCase("fail") ? "build/reports/screenshots/fail" : "screenshots/pass";
         File scrFile = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.FILE);
 
         new File(destDir).mkdirs();

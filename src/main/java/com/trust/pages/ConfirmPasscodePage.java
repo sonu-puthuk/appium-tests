@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class ConfirmPasscodePage extends BasePage{
+public class ConfirmPasscodePage extends BasePage {
     public ConfirmPasscodePage(AppiumDriver driver) {
         super(driver);
     }
@@ -12,14 +12,14 @@ public class ConfirmPasscodePage extends BasePage{
     private final By title = By.xpath("//android.widget.TextView[@text=\"Confirm passcode\"]");
     private final String dialPadNumXpath = "//android.widget.TextView[@text=\"#\"]";
 
-    public boolean isLoaded(){
+    public boolean isLoaded() {
         waitForElementToBePresent(title);
         return getElement(title).isDisplayed();
     }
 
     public WelcomeOverlay setPasscode(String passcode) {
         for (char c : passcode.toCharArray()) {
-            By num  = By.xpath(dialPadNumXpath.replace('#',c));
+            By num = By.xpath(dialPadNumXpath.replace('#', c));
             WebElement numEle = getElement(num);
             numEle.click();
         }

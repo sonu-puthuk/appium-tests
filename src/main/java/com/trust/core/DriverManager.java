@@ -14,6 +14,7 @@ public class DriverManager {
     public static AppiumDriver getDriver() {
         return driver;
     }
+
     private static AppiumDriver driver;
     String APPIUM_SERVER_URL = "http://localhost:4723";
 

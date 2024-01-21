@@ -6,9 +6,7 @@ import com.trust.utils.PropertyHelper;
 import io.appium.java_client.AppiumDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -25,7 +23,7 @@ public class Hooks {
         Platform platform = Platform.valueOf((String) props.get("platform"));
         try {
             driver = new DriverManager().getDriver(platform);
-        } catch ( Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

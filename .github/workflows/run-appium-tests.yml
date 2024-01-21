@@ -1,20 +1,20 @@
 name: Appium CI
 
 on:
-#  push:
-#    branches: [ "main" ]
+  #  push:
+  #    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
-    
+
 jobs:
   test:
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        api-level: [34]
-        target: [default]
+        api-level: [ 34 ]
+        target: [ default ]
     steps:
       - name: checkout
         uses: actions/checkout@v4

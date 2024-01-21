@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreateNewWalletTest extends Hooks {
-    @Test()
+    @Test(groups = {"smoke", "e2e"})
     public void testNewWalletWithoutBackup() {
         StartPage startPage = new GetStartedPage(driver).tapGetStarted();
         Assert.assertTrue(startPage.isLoaded());

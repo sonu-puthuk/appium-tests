@@ -7,13 +7,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
 public class BasePage {
     protected AppiumDriver driver;
     private Duration timeout = Duration.ofSeconds(10);
+
     public BasePage(AppiumDriver driver) {
         this.driver = driver;
+    }
+
+    public By backBtn = By.xpath("//android.view.View[@content-desc=\"Back\"]");
+
+    public BasePage clickBackBtn() {
+        getElement(backBtn).click();
+        return this;
     }
 
     public void click(WebElement ele) {
@@ -21,17 +28,19 @@ public class BasePage {
     }
 
     public WebElement getElement(By by) {
-        return driver.findElement(by);
-    }
-
-    public List<WebElement> getElements(By by) {
-        return driver.findElements(by);
+        return waitForElementToBePresent(by);
     }
 
     public WebElement waitForElementToBePresent(By by) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
-        return getElement(by);
+        return driver.findElement(by);
     }
+
+    public boolean isDisplayed(By by) {
+        WebElement element = waitForElementToBePresent(by);
+        return element.isDisplayed();
+    }
+
 
 }

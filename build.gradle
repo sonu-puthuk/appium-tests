@@ -10,7 +10,10 @@ repositories {
 }
 
 test {
-    useTestNG(){listeners << 'com.trust.utils.ScreenshotHelper'}
+    useTestNG() {
+        listeners << 'com.trust.utils.ScreenshotHelper'
+        includeGroups System.getProperty('tag', 'smoke')
+    }
 }
 
 dependencies {
