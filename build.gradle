@@ -17,6 +17,5 @@ dependencies {
     implementation group: 'io.appium', name: 'java-client', version: '9.0.0'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.141.59'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.16.1'
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.16.0'
     implementation group: 'org.testng', name: 'testng', version: '7.8.0'
 }

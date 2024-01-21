@@ -1,4 +1,4 @@
-package com.trust.page;
+package com.trust.pages;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
@@ -28,14 +28,10 @@ public class BasePage {
         return driver.findElements(by);
     }
 
-    public void waitForElementToBeVisible(WebElement elem) {
-        WebDriverWait wait = new WebDriverWait(driver, timeout);
-        wait.until(ExpectedConditions.visibilityOf(elem));
-    }
-
-    public void waitForElementToBePresent(By by) {
+    public WebElement waitForElementToBePresent(By by) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
+        return getElement(by);
     }
 
 }

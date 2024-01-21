@@ -1,22 +1,21 @@
-package com.trust.page;
+package com.trust.pages;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class GetStartedPage extends BasePage {
-    private final By getStarted = By.className("android.widget.Button");
+    private final By getStartedBtn = By.className("android.widget.Button");
 
     public GetStartedPage(AppiumDriver driver) {
         super(driver);
     }
 
-    public HomePage tapGetStarted() {
-        WebElement getStartedElem = getElement(getStarted);
-        waitForElementToBeVisible(getStartedElem);
+    public StartPage tapGetStarted() {
+        WebElement getStartedElem = waitForElementToBePresent(getStartedBtn);
 
         click(getStartedElem);
-        return new HomePage(driver);
+        return new StartPage(driver);
     }
 
 }
