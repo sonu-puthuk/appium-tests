@@ -3,6 +3,7 @@ package com.trust.pages;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class WelcomeOverlay extends BasePage {
     public WelcomeOverlay(AppiumDriver driver) {
@@ -22,6 +23,12 @@ public class WelcomeOverlay extends BasePage {
 
         click(startUsingEle);
         return new HomePage(driver);
+    }
+
+    public WelcomeOverlay validatePage(){
+        Assert.assertTrue(isLoaded());
+        Assert.assertTrue(isDisplayed(startUsingBtn));
+        return this;
     }
 
 

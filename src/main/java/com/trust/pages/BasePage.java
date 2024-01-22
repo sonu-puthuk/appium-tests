@@ -9,14 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasePage {
+    private final Duration timeout = Duration.ofSeconds(10);
+    public By backBtn = By.xpath("//android.view.View[@content-desc=\"Back\"]");
     protected AppiumDriver driver;
-    private Duration timeout = Duration.ofSeconds(10);
 
     public BasePage(AppiumDriver driver) {
         this.driver = driver;
     }
-
-    public By backBtn = By.xpath("//android.view.View[@content-desc=\"Back\"]");
 
     public BasePage clickBackBtn() {
         getElement(backBtn).click();

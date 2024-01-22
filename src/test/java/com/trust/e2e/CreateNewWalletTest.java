@@ -12,18 +12,20 @@ public class CreateNewWalletTest extends Hooks {
         Assert.assertTrue(startPage.isLoaded());
 
         BackupPage backupPage = startPage.tapCreateNewWallet();
-        Assert.assertTrue(backupPage.isLoaded());
+        backupPage.validatePage();
 
         CreatePasscodePage createPasscodePage = backupPage.tapSkip();
-        Assert.assertTrue(createPasscodePage.isLoaded());
+        createPasscodePage.validatePage();
 
         ConfirmPasscodePage confirmPasscodePage = createPasscodePage.setPasscode("111111");
-        Assert.assertTrue(confirmPasscodePage.isLoaded());
+        confirmPasscodePage.validatePage();
 
         WelcomeOverlay welcomeOverlay = confirmPasscodePage.setPasscode("111111");
-        Assert.assertTrue(welcomeOverlay.isLoaded());
+        welcomeOverlay.validatePage();
 
         HomePage homePage = welcomeOverlay.tapStartUsingBtn();
-        Assert.assertTrue(homePage.isLoaded());
+        homePage.validatePage();
+        Assert.assertEquals("0.00", homePage.getBalance().get("amount"));
+        Assert.assertEquals("$", homePage.getBalance().get("currency"));
     }
 }
