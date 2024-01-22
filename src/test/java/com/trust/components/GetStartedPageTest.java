@@ -6,6 +6,7 @@ import com.trust.pages.StartPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Test(groups = "all")
 public class GetStartedPageTest extends Hooks {
     @Test()
     public void testGetStartedPage() {

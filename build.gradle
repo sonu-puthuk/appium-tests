@@ -12,7 +12,7 @@ repositories {
 test {
     useTestNG() {
         listeners << 'com.trust.utils.ScreenshotHelper'
-        includeGroups System.getProperty('tag', 'smoke')
+        includeGroups System.getProperty('tag', 'all')
     }
 }
 

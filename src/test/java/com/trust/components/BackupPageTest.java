@@ -7,6 +7,7 @@ import com.trust.pages.StartPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Test(groups = "all")
 public class BackupPageTest extends Hooks {
     @Test(groups = {"regression"})
     public void testBackupPageLoaded() {

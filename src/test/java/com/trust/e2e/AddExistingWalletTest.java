@@ -5,6 +5,7 @@ import com.trust.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Test(groups = "all")
 public class AddExistingWalletTest extends Hooks {
     @Test(groups = {"smoke", "e2e"})
     public void testAddExistingWallet() {
